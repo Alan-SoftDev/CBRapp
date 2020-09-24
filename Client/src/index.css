@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  background-color: #3282b8;
+  padding: 10px;
+  min-height: 50px;
+  text-align: left;
+  font-size: 25px;
+  font-style: italic;
+  color: lightblue;
+  font-weight: bold;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #204051;
+  font-family: Arial;
+}
+
+.navbar a {
+  float: left;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  border: 4px solid #204051;
+}
+
+.navbar .rightfloat {
+  float: right;
+  background-color: #ff5740;
+  font-size: 20px;
+  padding: 10px 50px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: 3px solid #ff5740;
+  border-radius: 50px;
+}
+
+@media (max-width:600px) {
+  .navbar a,.navbar .rightfloat, .dropdown, .dropbtn, .dropdown-content, .dropdown-content a{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.navbar a.adisable {
+  background-color: darkgray;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;
+  outline: none;
+  text-align: center;
+  color: white;
+  padding: 10px 50px;
+  background-color: #204051;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.dropbtn {
+  border: 3px solid #679b9b;
+  border-radius: 50px;
+}
+
+.navbar a:hover {
+  border-left: 2px solid #679b9b;
+  border-right: 2px solid #679b9b;
+}
+
+.navbar a:active {
+  background-color: darkcyan;
+}
+
+.link-active {
+  background-color: #679b9b;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #679b9b;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  text-align: center;
+  padding: 10px 30px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: gray;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20%;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+main {
+  z-index: 5;
+  font-size: 35px;
+  padding: 20px;
+}
+
+.search-container {
+  text-align: center;
+  background-color: #e4e3e3;
+  height: 100px;
+  overflow: auto;
+  padding: 30px 0 0 0;
+}
+
+input[type="search"] {
+  width: 50%;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.search-button {
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #89a9ac;
+  color: white;
+  cursor: pointer;
+  margin-right: 4px;
+  padding: 0 12px;
+}
+.search-button:active {
+  background-color: white;
+  color: black;
+}
+
+.list-container {
+  padding: 2% 0;
+  text-align: left;
+}
+
+.pagination {
+  font-size: 14px;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 4px 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.pagination div {
+  color: black;
+  float: left;
+  padding: 4px 8px;
+  font-weight: bolder;
+}
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.book-container {
+  overflow: auto;
+  padding: 10px;
+  border-bottom: 2px solid #1b262c;
+  border-radius: 25px 25px;
+  background-color: #e4e3e3;
+}
+.book-container img {
+  max-width: 15%;
+  float: left;
+}
+.reviewBook-container {
+  overflow: auto;
+  padding: 10px;
+}
+.reviewBook-container img {
+  max-width: 15%;
+  float: left;
+}
+
+.review-container {
+  overflow: auto;
+  padding: 10px;
+  border-bottom: 2px solid #1b262c;
+  border-radius: 25px 25px;
+  background-color: #e4e3e3;
+}
