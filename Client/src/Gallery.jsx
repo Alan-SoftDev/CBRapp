@@ -56,7 +56,7 @@ class Gallery extends Component {
                                 <p id="caption" style={{fontStyle:"italic"}}>
                                     Book title: {this.props.books[this.state.slideIndex - 1].title} <br />
                                     By: {this.props.books[this.state.slideIndex - 1].authors} <br />
-                                    Publisher: {this.props.books[this.state.slideIndex - 1].publisher} <br /> Year: {this.props.books[this.state.slideIndex - 1].year} <br /> Number of Pages:  {this.props.books[this.state.slideIndex - 1].pages}
+                                    Publisher: {this.props.books[this.state.slideIndex - 1].publisher} | Year: {this.props.books[this.state.slideIndex - 1].year} | No. of Pages:  {this.props.books[this.state.slideIndex - 1].pages}
                                 </p>
                             </div>
                         </div>

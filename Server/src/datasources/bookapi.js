@@ -21,6 +21,7 @@ class BookAPI extends RESTDataSource {
 			pdfs: response.pdf && [response.pdf[Object.keys(response.pdf)[0]], response.pdf[Object.keys(response.pdf)[1]]]
 		}
 	}
+	
 
 	async getByISBN(isbn13) {
 		const response = await this.get(`books/${isbn13}`);

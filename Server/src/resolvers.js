@@ -1,5 +1,6 @@
 const { GraphQLScalarType } = require('graphql');
 const authorizeWithGithub = require('./datasources/utils');
+require('dotenv').config();
 
 module.exports = {
     Query: {
@@ -70,9 +71,8 @@ module.exports = {
             const review = await dataSources.databaseAPI.getReview(reviewID);
             return { success: out.success, message: out.message, review };
         },
-        authLogin: async (_, { code, client_id, client_secret }, { dataSources }) => {
-            console.log(`5:${client_id}  ${client_secret}`)
-            output = await authorizeWithGithub(code, client_id, client_secret);
+        authLogin: async (_, { code }, { dataSources }) => {
+            output = await authorizeWithGithub(code, process.env.CLIENT_ID, process.env.CLIENT_SECRET);
             if (output.message) {
                 throw new Error(output.message)
             };

@@ -6,7 +6,7 @@ scalar DateTime
 enum ReviewCategory {
     TECHNICAL
     PRACTICAL
-    ORGANIZATIONAL
+    GENERAL
 }
 
 enum LikeType {
@@ -81,7 +81,7 @@ type ReviewUpdate {
 type Mutation {
     writeReview(isbn13:String! text:String! category:ReviewCategory): ReviewUpdate!
     clickLike(reviewID:ID! like:LikeType!): ReviewUpdate!
-    authLogin(code: String! client_id: String! client_secret: String!): LoginPayload!
+    authLogin(code: String!): LoginPayload!
 }
 
 `;

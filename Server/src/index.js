@@ -17,13 +17,10 @@ const server = new ApolloServer({
         if (!token) 
         {
            let currentUser = { userID: 'NOuserID', name: '' };
-           console.log("ifToken:" + token)
-           console.log(currentUser)
            return {currentUser}
         }
         console.log("Normal token:" + token)
         let currentUser = await willCurrentUser(token);
-        console.log(currentUser)
         return { currentUser }
     }
 });

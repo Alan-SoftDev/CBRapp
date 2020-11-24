@@ -106,7 +106,7 @@ const Books = (props) =>
                                 <pre style={{ fontFamily: "inherit" }}>
                                     <p style={{ fontSize: "16px" }}><b>Publisher:</b> {book.publisher}    |    <b>Year:</b> {book.year}    |    <b>ISBN-13:</b> {book.isbn13}    |    <b>Pages:</b> {book.pages}</p>
                                 </pre>
-                                <div><button onClick={() => btnClickHandler(book.isbn13)}>See reviews for this book ({(!!book.reviews?book.reviews.length:0)})</button></div>
+                                <div><button onClick={() => btnClickHandler(book.isbn13)}>See reviews for this book ({book.reviews.length})</button></div>
                             </div>
                         </div>
                     )}

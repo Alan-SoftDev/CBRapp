@@ -39,7 +39,7 @@ const ReviewForm = (props) =>
     };
     const onCategoryChangehandler = (e) =>
     {
-        props.onCategoryChangeHandler(e.target.value);
+         props.onCategoryChangeHandler(e.target.value);
     };
     const onISBN13Changehandler = (e) =>
     {
@@ -64,8 +64,8 @@ const ReviewForm = (props) =>
                 </div>
                 <div className="form-group">
                     <label htmlFor="category" style={{ fontWeight: "bold" }}>Category:</label><br />
-                    <input type="radio" id="ORGANIZATIONAL" name="category" value="ORGANIZATIONAL" checked={props.category === "ORGANIZATIONAL"} onChange={onCategoryChangehandler} />
-                    <label htmlFor="ORGANIZATIONAL">Organizational</label><br />
+                    <input type="radio" id="GENERAL" name="category" value="GENERAL" checked={props.category === "GENERAL"} onChange={onCategoryChangehandler} />
+                    <label htmlFor="GENERAL">General</label><br />
                     <input type="radio" id="TECHNICAL" name="category" value="TECHNICAL" checked={props.category === "TECHNICAL"} onChange={onCategoryChangehandler} />
                     <label htmlFor="TECHNICAL">Technical</label><br />
                     <input type="radio" id="PRACTICAL" name="category" value="PRACTICAL" checked={props.category === "PRACTICAL"} onChange={onCategoryChangehandler} />

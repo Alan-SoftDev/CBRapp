@@ -201,8 +201,8 @@ class DatabaseAPI extends DataSource {
             throw new Error('only an authorized user can write a review')
         }
         let userID = this.context.currentUser.userID;
-        let categ = ["TECHNICAL", "PRACTICAL", "ORGANIZATIONAL"];
-        let cat = (!category) ? "TECHNICAL" : ((category == "ORGANIZATIONAL") ? "ORGANIZATIONAL" : "PRACTICAL");
+        let categ = ["TECHNICAL", "PRACTICAL", "GENERAL"];
+        let cat = (category=="TECHNICAL") ? "TECHNICAL" : ((category == "GENERAL") ? "GENERAL" : "PRACTICAL");
         let db = await this.conn();
         const output = await new Promise(resolve => {
             db.connect(async (err) => {

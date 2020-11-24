@@ -4,16 +4,14 @@ import { withRouter } from 'react-router-dom';
 import MyUserInfo from './MyUserInfo';
 
 const AUTH_LOGIN = gql`
-mutation authLoginUpdate($code: String! $clientID: String! $clientSecret: String!){
-    authLogin(code:$code client_id:$clientID client_secret:$clientSecret){
+mutation authLoginUpdate($code: String!){
+    authLogin(code:$code){
         token
     }
 }
 `;
 
 const Authorization = (props) => {
-    let clientID = "";
-    let clientSecret = "";
     const [signIn, setSignIn] = React.useState(false);
 
     const signOutHandler = () => {
@@ -21,7 +19,7 @@ const Authorization = (props) => {
     }
 
     const loginClickHandler = () => {
-        clientID = prompt("Please enter your CLIENT_ID that you have got from GitHub:", "");
+        const clientID = <Github Client ID>;
         window.location =
             `https://github.com/login/oauth/authorize?client_id=${clientID}&scope=user`;
     }
@@ -35,10 +33,7 @@ const Authorization = (props) => {
     React.useEffect(() => {
         if (window.location.search.match(/code=/)) {
             const code = window.location.search.replace("?code=", "");
-            clientID = prompt("Please re-enter your CLIENT_ID that you have got from GitHub:", "");
-            clientSecret = prompt("Please enter your CLIENT_SECRET that you have got from GitHub:", "");
-            console.log("6" + clientID + '  ' + clientSecret)
-            authLogin({ variables: { code, clientID, clientSecret } });
+            authLogin({ variables: { code } });
         }
     }, []);
 
